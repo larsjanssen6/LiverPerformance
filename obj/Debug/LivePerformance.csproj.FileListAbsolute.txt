@@ -1,0 +1,9 @@
+\\mac\home\documents\visual studio 2017\Projects\LivePerformance\LivePerformance\bin\Debug\LivePerformance.exe.config
+\\mac\home\documents\visual studio 2017\Projects\LivePerformance\LivePerformance\bin\Debug\LivePerformance.exe
+\\mac\home\documents\visual studio 2017\Projects\LivePerformance\LivePerformance\bin\Debug\LivePerformance.pdb
+\\mac\home\documents\visual studio 2017\Projects\LivePerformance\LivePerformance\obj\Debug\LivePerformance.csprojResolveAssemblyReference.cache
+\\mac\home\documents\visual studio 2017\Projects\LivePerformance\LivePerformance\obj\Debug\LivePerformance.Form1.resources
+\\mac\home\documents\visual studio 2017\Projects\LivePerformance\LivePerformance\obj\Debug\LivePerformance.Properties.Resources.resources
+\\mac\home\documents\visual studio 2017\Projects\LivePerformance\LivePerformance\obj\Debug\LivePerformance.csproj.GenerateResource.Cache
+\\mac\home\documents\visual studio 2017\Projects\LivePerformance\LivePerformance\obj\Debug\LivePerformance.exe
+\\mac\home\documents\visual studio 2017\Projects\LivePerformance\LivePerformance\obj\Debug\LivePerformance.pdb
