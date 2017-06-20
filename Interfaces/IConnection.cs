@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LivePerformance.Interfaces
 {
-    interface IConnection
+    public interface IConnection
     {
         void Connect();
         void disConnect();

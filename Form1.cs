@@ -1,4 +1,5 @@
 ﻿using LivePerformance.Classes;
+using LivePerformance.Forms.Partijen;
 using LivePerformance.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -21,24 +22,12 @@ namespace LivePerformance
         {
             InitializeComponent();
             connection = new Connection();
-            testConnection();
         }
 
-        public void testConnection()
+        private void btnPartijen_Click(object sender, EventArgs e)
         {
-            connection.Connect();
-            SqlCommand sqlCommand = new SqlCommand("select * from test", connection.getConnection());
-            SqlDataReader reader = sqlCommand.ExecuteReader();
-
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    MessageBox.Show(reader["test"].ToString());
-                }
-            }
-
-            connection.disConnect();
+            Partijen partijen = new Partijen();
+            partijen.ShowDialog();
         }
     }
 }

@@ -7,3 +7,14 @@
 \\mac\home\documents\visual studio 2017\Projects\LivePerformance\LivePerformance\obj\Debug\LivePerformance.csproj.GenerateResource.Cache
 \\mac\home\documents\visual studio 2017\Projects\LivePerformance\LivePerformance\obj\Debug\LivePerformance.exe
 \\mac\home\documents\visual studio 2017\Projects\LivePerformance\LivePerformance\obj\Debug\LivePerformance.pdb
+Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.Form1.resources
+Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.Forms.Partijen.Partijen.resources
+Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.Properties.Resources.resources
+Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.csproj.GenerateResource.Cache
+Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.exe
+Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.pdb
+Y:\Code\Net\LivePerformance\bin\Debug\LivePerformance.exe.config
+Y:\Code\Net\LivePerformance\bin\Debug\LivePerformance.exe
+Y:\Code\Net\LivePerformance\bin\Debug\LivePerformance.pdb
+Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.Forms.Partijen.NewPartij.resources
+Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.csprojResolveAssemblyReference.cache
