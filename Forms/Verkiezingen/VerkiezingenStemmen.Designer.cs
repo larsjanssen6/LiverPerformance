@@ -39,6 +39,7 @@
             this.gridStemmen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridStemmen.Location = new System.Drawing.Point(38, 12);
             this.gridStemmen.Name = "gridStemmen";
+            this.gridStemmen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridStemmen.Size = new System.Drawing.Size(561, 170);
             this.gridStemmen.TabIndex = 0;
             // 

@@ -10,7 +10,7 @@ namespace LivePerformance.Classes.Models
     {
         private int id;
         private string naam;
-        private DateTime date;
+        private DateTime datum;
 
         public void setId(int id)
         {
@@ -32,14 +32,14 @@ namespace LivePerformance.Classes.Models
             return naam;
         }
 
-        public void setDate(DateTime date)
+        public void setDate(DateTime datum)
         {
-            this.date = date;
+            this.datum = datum;
         }
 
         public DateTime getDate()
         {
-            return date;
+            return datum;
         }
     }
 }

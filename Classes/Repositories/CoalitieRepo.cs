@@ -1,4 +1,5 @@
-﻿using LivePerformance.Interfaces;
+﻿using LivePerformance.Classes.Models;
+using LivePerformance.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LivePerformance.Classes.Repositories
 {
-    class CoalitieRepo
+    class CoalitieRepo : ICoalitieRepo
     {
         IConnection connection;
 
@@ -17,12 +18,12 @@ namespace LivePerformance.Classes.Repositories
             connection = conn;
         }
 
-        public void store(string name, List<Stem> stemmen, double zetels)
+        public void store(Coalitie coalitie, List<Stem> stemmen, double zetels)
         {
             connection.Connect();
             SqlCommand sqlCommand = new SqlCommand("insert into coalitie values(@name, @zetels) select scope_identity()", connection.getConnection());
             connection.Connect();
-            sqlCommand.Parameters.AddWithValue("@name", name);
+            sqlCommand.Parameters.AddWithValue("@name", coalitie.getName());
             sqlCommand.Parameters.AddWithValue("@zetels", zetels);
             sqlCommand.Connection = connection.getConnection();
             int coalitieId = (int)(decimal)sqlCommand.ExecuteScalar();

@@ -1,6 +1,7 @@
 ﻿using LivePerformance.Classes;
 using LivePerformance.Classes.Models;
 using LivePerformance.Classes.Repositories;
+using LivePerformance.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace LivePerformance.Forms.Partijen
 {
       public partial class NewPartij : Form
       {
-            PartijenRepo partijenRepo;
+            IPartijenRepo partijenRepo;
             Partijen partijen;
 
             public NewPartij(Partijen partijen)
@@ -32,7 +33,7 @@ namespace LivePerformance.Forms.Partijen
                 string name = txtName.Text;
                 string listTrekker = txtListTrekker.Text;
                 Partij partij = new Partij();
-                partij.setName(name);
+                partij.setNaam(name);
                 partij.setLijstrekker(listTrekker);
 
                 // Sla de partij op

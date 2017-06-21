@@ -1,6 +1,7 @@
 ﻿using LivePerformance.Classes;
 using LivePerformance.Classes.Models;
 using LivePerformance.Classes.Repositories;
+using LivePerformance.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,7 @@ namespace LivePerformance.Forms.Verkiezingen
     public partial class NewVerkiezing : Form
     {
 
-        VerkiezingRepo verkiezingenRepo;
+        IVerkiezingRepo verkiezingenRepo;
 
         public NewVerkiezing()
         {

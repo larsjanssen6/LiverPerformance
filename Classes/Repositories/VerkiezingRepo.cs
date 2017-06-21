@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LivePerformance.Classes.Repositories
 {
-    class VerkiezingRepo
+    class VerkiezingRepo : IVerkiezingRepo
     {
         IConnection connection;
 

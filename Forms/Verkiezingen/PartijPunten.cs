@@ -1,6 +1,7 @@
 ﻿using LivePerformance.Classes;
 using LivePerformance.Classes.Models;
 using LivePerformance.Classes.Repositories;
+using LivePerformance.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,10 +16,10 @@ namespace LivePerformance.Forms.Verkiezingen
 {
     public partial class PartijPunten : Form
     {
-        PartijenRepo partijRepo;
-        StemRepo stemRepo;
+        IPartijenRepo partijRepo;
+        IStemRepo stemRepo;
         VerkiezingenStemmen verkiezingenStemmen;
-        int partijId;
+        int partijId = 0;
 
         int verkiezingsId;
 
@@ -41,7 +42,7 @@ namespace LivePerformance.Forms.Verkiezingen
 
             foreach (Partij item in partijRepo.index())
             {
-                dt.Rows.Add(new object[] { item.getId(), item.getName() });
+                dt.Rows.Add(new object[] { item.getId(), item.getNaam() });
             }
 
             gridPartijen.DataSource = dt;
@@ -49,19 +50,20 @@ namespace LivePerformance.Forms.Verkiezingen
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if(String.IsNullOrEmpty(partijId.ToString()))
+            if(partijId <= 0)
+            {
+                MessageBox.Show("Selecteer a.u.b eerst een partij.");
+            }
+
+            else
             {
                 int stemmen = Convert.ToInt32(txtStemmen.Value);
 
                 stemRepo.store(verkiezingsId, partijId, stemmen);
                 verkiezingenStemmen.loadStemmen();
+                MessageBox.Show("Partij succesvol toegevoegd");
+                this.Close();
             }
-
-            else
-            {
-                MessageBox.Show("Selecteer a.u.b eerst een partij.");
-            }
-          
         }
 
         private void gridPartijen_CellClick(object sender, DataGridViewCellEventArgs e)

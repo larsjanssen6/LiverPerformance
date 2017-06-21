@@ -9,7 +9,7 @@ namespace LivePerformance.Classes.Models
     public class Partij
     {
         private int id;
-        private string name;
+        private string naam;
         private string lijstrekker;
 
         public int getId()
@@ -22,14 +22,14 @@ namespace LivePerformance.Classes.Models
             this.id = id;
         }
 
-        public string getName()
+        public string getNaam()
         {
-            return name;
+            return naam;
         }
 
-        public void setName(string name)
+        public void setNaam(string name)
         {
-            this.name = name;
+            this.naam = name;
         }
 
         public void setLijstrekker(string lijstrekker)

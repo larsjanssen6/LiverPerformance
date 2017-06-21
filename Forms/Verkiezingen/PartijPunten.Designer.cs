@@ -32,13 +32,14 @@
             this.txtStemmen = new System.Windows.Forms.NumericUpDown();
             this.gridPartijen = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.txtStemmen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridPartijen)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(12, 188);
+            this.btnAdd.Location = new System.Drawing.Point(12, 213);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 2;
@@ -48,7 +49,12 @@
             // 
             // txtStemmen
             // 
-            this.txtStemmen.Location = new System.Drawing.Point(12, 153);
+            this.txtStemmen.Location = new System.Drawing.Point(12, 178);
+            this.txtStemmen.Maximum = new decimal(new int[] {
+            -559939584,
+            902409669,
+            54,
+            0});
             this.txtStemmen.Name = "txtStemmen";
             this.txtStemmen.Size = new System.Drawing.Size(202, 20);
             this.txtStemmen.TabIndex = 3;
@@ -58,6 +64,7 @@
             this.gridPartijen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridPartijen.Location = new System.Drawing.Point(12, 30);
             this.gridPartijen.Name = "gridPartijen";
+            this.gridPartijen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridPartijen.Size = new System.Drawing.Size(317, 107);
             this.gridPartijen.TabIndex = 4;
             this.gridPartijen.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPartijen_CellClick);
@@ -71,11 +78,21 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Selecteer hier partij";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 150);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(158, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Let op: selecteer eerst een partij";
+            // 
             // PartijPunten
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(352, 249);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gridPartijen);
             this.Controls.Add(this.txtStemmen);
@@ -94,5 +111,6 @@
     private System.Windows.Forms.NumericUpDown txtStemmen;
     private System.Windows.Forms.DataGridView gridPartijen;
     private System.Windows.Forms.Label label1;
+    private System.Windows.Forms.Label label2;
   }
 }

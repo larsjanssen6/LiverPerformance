@@ -1,6 +1,7 @@
 ﻿using LivePerformance.Classes;
 using LivePerformance.Classes.Models;
 using LivePerformance.Classes.Repositories;
+using LivePerformance.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,7 @@ namespace LivePerformance.Forms.Partijen
     public partial class EditPartij : Form
     {
 
-        PartijenRepo partijenRepo;
+        IPartijenRepo partijenRepo;
         Partijen partijen;
         Partij partij;
         int partijId;
@@ -33,14 +34,14 @@ namespace LivePerformance.Forms.Partijen
         public void loadPartij()
         {
             partij = partijenRepo.find(partijId);
-            txtName.Text = partij.getName();
+            txtName.Text = partij.getNaam();
             txtListTrekker.Text = partij.getLijstrekker();
         }
 
         private void btnUpdatePartij_Click(object sender, EventArgs e)
         {
             partij.setLijstrekker(txtListTrekker.Text);
-            partij.setName(txtName.Text);
+            partij.setNaam(txtName.Text);
             partijenRepo.update(partij);
             partijen.loadPartijen();
 

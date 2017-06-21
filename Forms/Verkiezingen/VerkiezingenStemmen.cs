@@ -1,6 +1,7 @@
 ﻿using LivePerformance.Classes;
 using LivePerformance.Classes.Repositories;
 using LivePerformance.Forms.Coalities;
+using LivePerformance.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,7 @@ namespace LivePerformance.Forms.Verkiezingen
     public partial class VerkiezingenStemmen : Form
     {
         int verkiezingsId;
-        StemRepo stemRepo;
+        IStemRepo stemRepo;
 
         public VerkiezingenStemmen(int verkiezingsId)
         {
@@ -36,7 +37,8 @@ namespace LivePerformance.Forms.Verkiezingen
 
             foreach (Stem item in stemRepo.index(verkiezingsId))
             {
-                dt.Rows.Add(new object[] { item.getVerkiezing().getNaam(), item.getPartij().getName(), item.getTotaal() });
+        //hier
+                dt.Rows.Add(new object[] { item.getVerkiezing().getNaam(), item.getPartij().getNaam(), item.getTotaal() });
             }
 
             gridStemmen.DataSource = dt;

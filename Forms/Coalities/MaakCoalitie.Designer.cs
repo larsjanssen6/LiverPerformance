@@ -73,6 +73,7 @@
             this.btnExportCoalitie.TabIndex = 3;
             this.btnExportCoalitie.Text = "Exporteer coalitie";
             this.btnExportCoalitie.UseVisualStyleBackColor = true;
+            this.btnExportCoalitie.Click += new System.EventHandler(this.btnExportCoalitie_Click);
             // 
             // txtCoalitieNaam
             // 

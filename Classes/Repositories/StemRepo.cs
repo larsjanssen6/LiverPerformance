@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace LivePerformance.Classes.Repositories
 {
-    class StemRepo
+    class StemRepo : IStemRepo
     {
         IConnection connection;
 
@@ -35,7 +35,7 @@ namespace LivePerformance.Classes.Repositories
                 {
                   stem = new Stem();
                   Partij partij = new Partij();
-                  partij.setName(reader["partij"].ToString());
+                  partij.setNaam(reader["partij"].ToString());
                   Verkiezing verkiezing = new Verkiezing();
                   verkiezing.setNaam(reader["verkiezing"].ToString());
                   stem.setVerkiezing(verkiezing);
@@ -64,7 +64,7 @@ namespace LivePerformance.Classes.Repositories
             {
               stem = new Stem();
               Partij partij = new Partij();
-              partij.setName(reader["partij"].ToString());
+              partij.setNaam(reader["partij"].ToString());
               Verkiezing verkiezing = new Verkiezing();
               verkiezing.setNaam(reader["verkiezing"].ToString());
               stem.setVerkiezing(verkiezing);

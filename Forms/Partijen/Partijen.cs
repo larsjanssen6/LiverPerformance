@@ -1,6 +1,7 @@
 ﻿using LivePerformance.Classes;
 using LivePerformance.Classes.Models;
 using LivePerformance.Classes.Repositories;
+using LivePerformance.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,7 @@ namespace LivePerformance.Forms.Partijen
     public partial class Partijen : Form
     {
 
-        PartijenRepo partijenRepo;
+        IPartijenRepo partijenRepo;
 
         public Partijen()
         {
@@ -35,7 +36,7 @@ namespace LivePerformance.Forms.Partijen
 
             foreach (Partij item in partijenRepo.index())
             {
-                dt.Rows.Add(new object[] { item.getId(), item.getName(), item.getLijstrekker() });
+                dt.Rows.Add(new object[] { item.getId(), item.getNaam(), item.getLijstrekker() });
             }
 
             lijstrekkersGrid.DataSource = dt;

@@ -1,6 +1,7 @@
 ﻿using LivePerformance.Classes;
 using LivePerformance.Classes.Models;
 using LivePerformance.Classes.Repositories;
+using LivePerformance.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,9 @@ namespace LivePerformance.Forms.Coalities
     public partial class MaakCoalitie : Form
     {
         int verkiezingId;
-        StemRepo stemRepo;
-        VerkiezingRepo verkiezingRepo;
-        CoalitieRepo coalitieRepo;
+        IStemRepo stemRepo;
+        IVerkiezingRepo verkiezingRepo;
+        ICoalitieRepo coalitieRepo;
 
         List<Stem> coalitieStemmen;
 
@@ -44,7 +45,7 @@ namespace LivePerformance.Forms.Coalities
 
             foreach (Stem item in stemRepo.index(verkiezingId))
             {
-                dt.Rows.Add(new object[] { item.getId(), item.getVerkiezing().getNaam(), item.getPartij().getName(), item.getTotaal() });
+                dt.Rows.Add(new object[] { item.getId(), item.getVerkiezing().getNaam(), item.getPartij().getNaam(), item.getTotaal() });
             }
 
             gridPartijen.DataSource = dt;
@@ -64,7 +65,7 @@ namespace LivePerformance.Forms.Coalities
             {
                 foreach (Stem item in coalitieStemmen)
                 {
-                  dt.Rows.Add(new object[] { item.getId(), item.getVerkiezing().getNaam(), item.getPartij().getName(), item.getTotaal() });
+                  dt.Rows.Add(new object[] { item.getId(), item.getVerkiezing().getNaam(), item.getPartij().getNaam(), item.getTotaal() });
                 }
 
                 gridCoalities.DataSource = dt;
@@ -87,13 +88,14 @@ namespace LivePerformance.Forms.Coalities
             coalitie.setStemmen(coalitieStemmen);
 
             string coalitieName = txtCoalitieNaam.Text;
+            coalitie.setNaam(coalitieName);
 
             int totalStemmen = verkiezingRepo.getTotalStemmen(verkiezingId);
 
             if (coalitie.checkIfCoalitieCanBeMade(totalStemmen))
             {
                 double zetels = coalitie.toZetels(coalitie.countStemmen(), totalStemmen);
-                coalitieRepo.store(coalitieName, coalitieStemmen, zetels);
+                coalitieRepo.store(coalitie, coalitieStemmen, zetels);
                 MessageBox.Show("Coalitie opgeslagen met " + zetels.ToString() + " zetels.");
             }
 
@@ -102,5 +104,46 @@ namespace LivePerformance.Forms.Coalities
                 MessageBox.Show("Formatie kan niet worden gevormd!");
             }
         }
+
+        private void btnExportCoalitie_Click(object sender, EventArgs e)
+        {
+            string[] lines = { "First line", "Second line", "Third line" };
+
+            using (System.IO.StreamWriter file =
+             new System.IO.StreamWriter(@"C:\WriteLines2.txt"))
+            {
+              foreach (string line in lines)
+              {
+                // If the line doesn't contain the word 'Second', write the line to the file.
+                if (!line.Contains("Second"))
+                {
+                  file.WriteLine(line);
+                }
+              }
+            }
+
+
+
+            //Coalitie coalitie = new Coalitie();
+            //coalitie.setStemmen(coalitieStemmen);
+
+      //string coalitieName = txtCoalitieNaam.Text;
+      //coalitie.setNaam(coalitieName);
+
+      //int totalStemmen = verkiezingRepo.getTotalStemmen(verkiezingId);
+
+      //if (coalitie.checkIfCoalitieCanBeMade(totalStemmen))
+      //{
+      //    string[] lines = { "First line", "Second line", "Third line" };
+      //    // WriteAllLines creates a file, writes a collection of strings to the file,
+      //    // and then closes the file.  You do NOT need to call Flush() or Close().
+      //    System.IO.File.WriteAllLines(@"C:\Users\WriteLines.txt", lines);
+      //}
+
+      //else
+      //{
+      //    MessageBox.Show("Formatie kan niet worden gevormd!");
+      //}
+    }
     }
 }

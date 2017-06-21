@@ -38,6 +38,7 @@
             this.lijstrekkersGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.lijstrekkersGrid.Location = new System.Drawing.Point(42, 12);
             this.lijstrekkersGrid.Name = "lijstrekkersGrid";
+            this.lijstrekkersGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.lijstrekkersGrid.Size = new System.Drawing.Size(435, 217);
             this.lijstrekkersGrid.TabIndex = 0;
             this.lijstrekkersGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.lijstrekkersGrid_CellClick);

@@ -31,6 +31,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -108,7 +109,11 @@
     <Compile Include="Forms\Verkiezingen\VerkiezingenStemmen.Designer.cs">
       <DependentUpon>VerkiezingenStemmen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\ICoalitieRepo.cs" />
     <Compile Include="Interfaces\IConnection.cs" />
+    <Compile Include="Interfaces\IPartijenRepo.cs" />
+    <Compile Include="Interfaces\IStemRepo.cs" />
+    <Compile Include="Interfaces\IVerkiezingRepo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LivePerformance.Classes.Repositories
 {
-  public class PartijenRepo
+  public class PartijenRepo : IPartijenRepo
   {
     IConnection connection;
 
@@ -33,7 +33,7 @@ namespace LivePerformance.Classes.Repositories
           {
             partij = new Partij();
             partij.setId(Convert.ToInt32(reader["id"]));
-            partij.setName(reader["naam"].ToString());
+            partij.setNaam(reader["naam"].ToString());
             partij.setLijstrekker(reader["lijstrekker"].ToString());
             partijen.Add(partij);
           }
@@ -47,7 +47,7 @@ namespace LivePerformance.Classes.Repositories
       connection.Connect();
       SqlCommand sqlCommand = new SqlCommand("insert into partij values(@name, @lijstrekker)", connection.getConnection());
       connection.Connect();
-      sqlCommand.Parameters.AddWithValue("@name", partij.getName());
+      sqlCommand.Parameters.AddWithValue("@name", partij.getNaam());
       sqlCommand.Parameters.AddWithValue("@lijstrekker", partij.getLijstrekker());
       sqlCommand.ExecuteNonQuery();
       sqlCommand.Connection = connection.getConnection();
@@ -58,7 +58,7 @@ namespace LivePerformance.Classes.Repositories
       connection.Connect();
       SqlCommand sqlCommand = new SqlCommand("update partij set naam = @name, lijstrekker = @lijstrekker where id = @id", connection.getConnection());
       connection.Connect();
-      sqlCommand.Parameters.AddWithValue("@name", partij.getName());
+      sqlCommand.Parameters.AddWithValue("@name", partij.getNaam());
       sqlCommand.Parameters.AddWithValue("@lijstrekker", partij.getLijstrekker());
       sqlCommand.Parameters.AddWithValue("@id", partij.getId());
       sqlCommand.ExecuteNonQuery();
@@ -79,7 +79,7 @@ namespace LivePerformance.Classes.Repositories
           while (reader.Read())
           {
             partij.setId(Convert.ToInt32(reader["id"]));
-            partij.setName(reader["naam"].ToString());
+            partij.setNaam(reader["naam"].ToString());
             partij.setLijstrekker(reader["lijstrekker"].ToString());
           }
         }

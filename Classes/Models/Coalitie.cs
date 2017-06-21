@@ -11,6 +11,18 @@ namespace LivePerformance.Classes.Models
     {
         List<Stem> stemmen;
 
+        private string naam;
+
+        public string getName()
+        {
+            return naam;
+        }
+
+        public void setNaam(string naam)
+        {
+            this.naam = naam;
+        }
+
         public void setStemmen(List<Stem> stemmen)
         {
             this.stemmen = stemmen;
