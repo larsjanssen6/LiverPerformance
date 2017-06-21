@@ -45,10 +45,11 @@ namespace LivePerformance.Classes.Repositories
     public void store(Partij partij)
     {
       connection.Connect();
-      SqlCommand sqlCommand = new SqlCommand("insert into partij values(@name, @lijstrekker)", connection.getConnection());
+      SqlCommand sqlCommand = new SqlCommand("CreatePartij", connection.getConnection());
       connection.Connect();
-      sqlCommand.Parameters.AddWithValue("@name", partij.getNaam());
+      sqlCommand.Parameters.AddWithValue("@naam", partij.getNaam());
       sqlCommand.Parameters.AddWithValue("@lijstrekker", partij.getLijstrekker());
+      sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
       sqlCommand.ExecuteNonQuery();
       sqlCommand.Connection = connection.getConnection();
     }

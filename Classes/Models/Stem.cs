@@ -11,7 +11,6 @@ namespace LivePerformance.Classes.Repositories
     {
         private int id;
         private int totaal;
-        private int zetels;
         private Partij partij;
         private Verkiezing verkiezing;
         

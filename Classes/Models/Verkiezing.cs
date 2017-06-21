@@ -36,10 +36,5 @@ namespace LivePerformance.Classes.Models
         {
             this.datum = datum;
         }
-
-        public DateTime getDate()
-        {
-            return datum;
-        }
     }
 }

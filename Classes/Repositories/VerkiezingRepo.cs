@@ -42,5 +42,23 @@ namespace LivePerformance.Classes.Repositories
             connection.disConnect();
             return id;
         }
-    }
+
+        public bool find(int verkiezingId)
+        {
+          connection.Connect();
+          SqlCommand sqlCommand = new SqlCommand("select * from verkiezing where id = @id", connection.getConnection());
+          sqlCommand.Parameters.AddWithValue("@id", verkiezingId);
+          connection.Connect();
+          sqlCommand.Connection = connection.getConnection();
+
+          SqlDataReader reader = sqlCommand.ExecuteReader();
+
+          if (reader.HasRows)
+          {
+              return true;
+          }
+
+          return false;
+        }
+  }
 }

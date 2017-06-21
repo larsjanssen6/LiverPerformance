@@ -26,3 +26,10 @@ Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.Forms.Coalities.MaakCoalit
 Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.Forms.Coalities.Coalities.resources
 Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.Forms.Coalities.OneCoalitie.resources
 Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.Forms.Uitslagen.Uitslagen.resources
+Y:\Code\Net\LivePerformance\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+Y:\Code\Net\LivePerformance\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+Y:\Code\Net\LivePerformance\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+Y:\Code\Net\LivePerformance\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+Y:\Code\Net\LivePerformance\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+Y:\Code\Net\LivePerformance\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+Y:\Code\Net\LivePerformance\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml

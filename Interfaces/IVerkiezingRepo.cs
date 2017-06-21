@@ -11,5 +11,6 @@ namespace LivePerformance.Interfaces
   {
       int store(Verkiezing verkiezing);
       int getTotalStemmen(int verkiezingId);
+      bool find(int verkiezingId);
   }
 }
