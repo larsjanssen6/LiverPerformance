@@ -46,15 +46,38 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Connection.cs" />
+    <Compile Include="Classes\Models\Coalitie.cs" />
     <Compile Include="Classes\Models\Partij.cs" />
+    <Compile Include="Classes\Models\Stem.cs" />
+    <Compile Include="Classes\Models\Verkiezing.cs" />
+    <Compile Include="Classes\Repositories\CoalitieRepo.cs" />
     <Compile Include="Classes\Repositories\PartijenRepo.cs" />
+    <Compile Include="Classes\Repositories\StemRepo.cs" />
+    <Compile Include="Classes\Repositories\VerkiezingRepo.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Coalities\Coalities.cs" />
+    <Compile Include="Forms\Coalities\Coalities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Coalities\Coalities.Designer.cs">
+      <DependentUpon>Coalities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Coalities\MaakCoalitie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Coalities\MaakCoalitie.Designer.cs">
+      <DependentUpon>MaakCoalitie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Partijen\EditPartij.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Partijen\EditPartij.Designer.cs">
+      <DependentUpon>EditPartij.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Partijen\NewPartij.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,17 +90,53 @@
     <Compile Include="Forms\Partijen\Partijen.Designer.cs">
       <DependentUpon>Partijen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Verkiezingen\NewVerkiezing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Verkiezingen\NewVerkiezing.Designer.cs">
+      <DependentUpon>NewVerkiezing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Verkiezingen\PartijPunten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Verkiezingen\PartijPunten.Designer.cs">
+      <DependentUpon>PartijPunten.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Verkiezingen\VerkiezingenStemmen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Verkiezingen\VerkiezingenStemmen.Designer.cs">
+      <DependentUpon>VerkiezingenStemmen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\IConnection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Coalities\Coalities.resx">
+      <DependentUpon>Coalities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Coalities\MaakCoalitie.resx">
+      <DependentUpon>MaakCoalitie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Partijen\EditPartij.resx">
+      <DependentUpon>EditPartij.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Partijen\NewPartij.resx">
       <DependentUpon>NewPartij.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Partijen\Partijen.resx">
       <DependentUpon>Partijen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Verkiezingen\NewVerkiezing.resx">
+      <DependentUpon>NewVerkiezing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Verkiezingen\PartijPunten.resx">
+      <DependentUpon>PartijPunten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Verkiezingen\VerkiezingenStemmen.resx">
+      <DependentUpon>VerkiezingenStemmen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

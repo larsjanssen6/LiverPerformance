@@ -18,3 +18,9 @@ Y:\Code\Net\LivePerformance\bin\Debug\LivePerformance.exe
 Y:\Code\Net\LivePerformance\bin\Debug\LivePerformance.pdb
 Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.Forms.Partijen.NewPartij.resources
 Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.csprojResolveAssemblyReference.cache
+Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.Forms.Partijen.EditPartij.resources
+Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.Forms.Verkiezingen.NewVerkiezing.resources
+Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.Forms.Verkiezingen.PartijPunten.resources
+Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.Forms.Verkiezingen.VerkiezingenStemmen.resources
+Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.Forms.Coalities.MaakCoalitie.resources
+Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.Forms.Coalities.Coalities.resources

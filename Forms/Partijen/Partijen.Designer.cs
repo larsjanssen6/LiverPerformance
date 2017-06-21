@@ -40,13 +40,13 @@
             this.lijstrekkersGrid.Name = "lijstrekkersGrid";
             this.lijstrekkersGrid.Size = new System.Drawing.Size(435, 217);
             this.lijstrekkersGrid.TabIndex = 0;
-            this.lijstrekkersGrid.SelectionChanged += new System.EventHandler(this.lijstrekkersGrid_SelectionChanged);
+            this.lijstrekkersGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.lijstrekkersGrid_CellClick);
             // 
             // btnAddPartij
             // 
             this.btnAddPartij.Location = new System.Drawing.Point(42, 258);
             this.btnAddPartij.Name = "btnAddPartij";
-            this.btnAddPartij.Size = new System.Drawing.Size(117, 23);
+            this.btnAddPartij.Size = new System.Drawing.Size(127, 23);
             this.btnAddPartij.TabIndex = 1;
             this.btnAddPartij.Text = "Nieuwe partij";
             this.btnAddPartij.UseVisualStyleBackColor = true;

@@ -1,5 +1,6 @@
 ﻿using LivePerformance.Classes;
 using LivePerformance.Forms.Partijen;
+using LivePerformance.Forms.Verkiezingen;
 using LivePerformance.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -29,5 +30,11 @@ namespace LivePerformance
             Partijen partijen = new Partijen();
             partijen.ShowDialog();
         }
-    }
+
+        private void btnNewVerkiezing_Click(object sender, EventArgs e)
+        {
+            NewVerkiezing newVerkiezing = new NewVerkiezing();
+            newVerkiezing.ShowDialog();
+        }
+  }
 }

@@ -43,13 +43,16 @@ namespace LivePerformance.Forms.Partijen
 
         private void btnAddPartij_Click(object sender, EventArgs e)
         {
-          NewPartij newPartij = new NewPartij();
-          newPartij.ShowDialog();
+            NewPartij newPartij = new NewPartij(this);
+            newPartij.ShowDialog();
         }
 
-        private void lijstrekkersGrid_SelectionChanged(object sender, EventArgs e)
+        private void lijstrekkersGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            int index = e.RowIndex;
+            DataGridViewRow selectedRow = lijstrekkersGrid.Rows[index];
+            EditPartij editPartij = new EditPartij(Convert.ToInt32(selectedRow.Cells[0].Value), this);
+            editPartij.ShowDialog();
         }
-  }
+    }
 }

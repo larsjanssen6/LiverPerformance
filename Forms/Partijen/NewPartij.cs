@@ -16,11 +16,13 @@ namespace LivePerformance.Forms.Partijen
       public partial class NewPartij : Form
       {
             PartijenRepo partijenRepo;
+            Partijen partijen;
 
-            public NewPartij()
+            public NewPartij(Partijen partijen)
             {
                 InitializeComponent();
                 partijenRepo = new PartijenRepo(new Connection());
+                this.partijen = partijen;
             }
 
             private void btnAddPartij_Click(object sender, EventArgs e)
@@ -32,10 +34,14 @@ namespace LivePerformance.Forms.Partijen
                 Partij partij = new Partij();
                 partij.setName(name);
                 partij.setLijstrekker(listTrekker);
-              
+
                 // Sla de partij op
 
+                txtListTrekker.Text = "";
+                txtName.Text = "";
+
                 partijenRepo.store(partij);
+                partijen.loadPartijen();
 
                 MessageBox.Show("Partij succesvol aangemaakt.");
             }
