@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -60,6 +63,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Coalities\OneCoalitie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Coalities\OneCoalitie.Designer.cs">
+      <DependentUpon>OneCoalitie.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Coalities\Coalities.cs">
       <SubType>Form</SubType>
@@ -91,6 +100,12 @@
     <Compile Include="Forms\Partijen\Partijen.Designer.cs">
       <DependentUpon>Partijen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Uitslagen\Uitslagen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Uitslagen\Uitslagen.Designer.cs">
+      <DependentUpon>Uitslagen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Verkiezingen\NewVerkiezing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +134,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Coalities\OneCoalitie.resx">
+      <DependentUpon>OneCoalitie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Coalities\Coalities.resx">
       <DependentUpon>Coalities.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Partijen\Partijen.resx">
       <DependentUpon>Partijen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Uitslagen\Uitslagen.resx">
+      <DependentUpon>Uitslagen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Verkiezingen\NewVerkiezing.resx">
       <DependentUpon>NewVerkiezing.cs</DependentUpon>
@@ -152,6 +173,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

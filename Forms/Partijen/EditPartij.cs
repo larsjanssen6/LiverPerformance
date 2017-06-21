@@ -40,12 +40,28 @@ namespace LivePerformance.Forms.Partijen
 
         private void btnUpdatePartij_Click(object sender, EventArgs e)
         {
-            partij.setLijstrekker(txtListTrekker.Text);
-            partij.setNaam(txtName.Text);
-            partijenRepo.update(partij);
-            partijen.loadPartijen();
+            try
+            {
+                if (String.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtListTrekker.Text))
+                {
+                  MessageBox.Show("Vul aub alle velden in");
+                }
 
-            MessageBox.Show("Partij succesvol geupdatet!");
+                else
+                {
+                  partij.setLijstrekker(txtListTrekker.Text);
+                  partij.setNaam(txtName.Text);
+                  partijenRepo.update(partij);
+                  partijen.loadPartijen();
+
+                  MessageBox.Show("Partij succesvol geupdatet!");
+                }
+            }
+
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }         
         }
     }
 }

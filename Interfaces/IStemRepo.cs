@@ -9,6 +9,7 @@ namespace LivePerformance.Interfaces
 {
   interface IStemRepo
   {
+      List<Stem> all();
       List<Stem> index(int id);
       Stem find(int id);
       void store(int verkiezingsId, int partijId, int totaal);

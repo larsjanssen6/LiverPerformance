@@ -1,5 +1,7 @@
 ﻿using LivePerformance.Classes;
+using LivePerformance.Forms.Coalities;
 using LivePerformance.Forms.Partijen;
+using LivePerformance.Forms.Uitslagen;
 using LivePerformance.Forms.Verkiezingen;
 using LivePerformance.Interfaces;
 using System;
@@ -36,5 +38,17 @@ namespace LivePerformance
             NewVerkiezing newVerkiezing = new NewVerkiezing();
             newVerkiezing.ShowDialog();
         }
+
+        private void btnCoalitie_Click(object sender, EventArgs e)
+        {
+            Coalities coalities = new Coalities();
+            coalities.ShowDialog();
+        }
+
+    private void button3_Click(object sender, EventArgs e)
+    {
+        Uitslagen uitslagen = new Uitslagen();
+        uitslagen.ShowDialog();
+    }
   }
 }

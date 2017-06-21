@@ -18,6 +18,30 @@ namespace LivePerformance.Classes.Repositories
             connection = conn;
         }
 
+        public List<Coalitie> index()
+        {
+          Coalitie coalitie;
+          List<Coalitie> coalities = new List<Coalitie>();
+
+          connection.Connect();
+          SqlCommand sqlCommand = new SqlCommand("select * from coalitie", connection.getConnection());
+
+          SqlDataReader reader = sqlCommand.ExecuteReader();
+          if (reader.HasRows)
+          {
+            while (reader.Read())
+            {
+              coalitie = new Coalitie();
+              coalitie.setId(Convert.ToInt32(reader["id"]));
+              coalitie.setNaam(reader["naam"].ToString());
+              coalitie.setZetels(Convert.ToInt32(reader["zetel"]));
+              coalities.Add(coalitie);
+            }
+          }
+
+          return coalities;
+        }
+
         public void store(Coalitie coalitie, List<Stem> stemmen, double zetels)
         {
             connection.Connect();
@@ -39,5 +63,29 @@ namespace LivePerformance.Classes.Repositories
 
             connection.disConnect();
         }
-  }
+        
+        public List<Coalitie>find(int coalitieId)
+        {
+            Coalitie coalitie;
+            List<Coalitie> coalities = new List<Coalitie>();
+
+            connection.Connect();
+            SqlCommand sqlCommand = new SqlCommand("select c.naam as naam, p.naam as partij from coalitie c inner join coalitie_stemmen cs on c.id = cs.coalitie_id inner join stem s on s.id = cs.stem_id inner join partij p on p.id = s.partij_id where c.id = @coalitieId", connection.getConnection());
+            sqlCommand.Parameters.AddWithValue("@coalitieId", coalitieId);
+
+            SqlDataReader reader = sqlCommand.ExecuteReader();
+            if (reader.HasRows)
+            {
+              while (reader.Read())
+              {
+                coalitie = new Coalitie();
+                coalitie.setNaam(reader["naam"].ToString());
+                coalitie.setPartij(reader["partij"].ToString());
+                coalities.Add(coalitie);
+              }
+            }
+
+            return coalities;
+        }
+    }
 }

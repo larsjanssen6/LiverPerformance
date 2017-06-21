@@ -7,11 +7,43 @@ using System.Threading.Tasks;
 
 namespace LivePerformance.Classes.Models
 {
-    class Coalitie
+    public class Coalitie
     {
-        List<Stem> stemmen;
-
+        private List <Stem> stemmen;
+        private int id;
+        private int zetels;
         private string naam;
+        private string partij;
+        
+        public string getPartij()
+        {
+            return partij;
+        }
+
+        public int getId()
+        {
+            return id;
+        }
+
+        public void setId(int id)
+        {
+          this.id = id;
+        }
+
+        public void setPartij(string partij)
+        {
+            this.partij = partij;
+        }
+
+        public void setZetels(int zetels)
+        {
+            this.zetels = zetels;
+        }
+
+        public int getZetels()
+        {
+            return zetels;
+        }
 
         public string getName()
         {
@@ -58,7 +90,27 @@ namespace LivePerformance.Classes.Models
 
         public double toZetels(int partijStemmen, int totalStemmen)
         {
-            return (double)partijStemmen / (double)totalStemmen * 150;
+            return Math.Round((double)partijStemmen / (double)totalStemmen * 150);
+        }
+
+        private double getMaxVotes(int totalStemmen)
+        {
+           return stemmen.Max(x => x.getTotaal());
+        }
+
+        public Stem getLijstrekker(int totalStemmen)
+        {
+            Stem toReturn = null;
+
+            foreach (Stem stem in stemmen)
+            {
+                if(stem.getTotaal() == getMaxVotes(totalStemmen))
+                {
+                    toReturn = stem;
+                }
+            }
+
+            return toReturn;
         }
     }
 }

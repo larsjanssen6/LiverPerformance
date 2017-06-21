@@ -27,22 +27,30 @@ namespace LivePerformance.Forms.Verkiezingen
 
         private void btnMake_Click(object sender, EventArgs e)
         {
-            string name = txtName.Text;
-
-            if(String.IsNullOrEmpty(txtName.Text))
+            try
             {
-                MessageBox.Show("Vul a.u.b een verkiezings naam in.");
+                string name = txtName.Text;
+
+                if (String.IsNullOrEmpty(txtName.Text))
+                {
+                  MessageBox.Show("Vul a.u.b een verkiezings naam in.");
+                }
+
+                else
+                {
+                  Verkiezing verkiezing = new Verkiezing();
+                  verkiezing.setNaam(name);
+                  int id = verkiezingenRepo.store(verkiezing);
+
+                  VerkiezingenStemmen verkiezingenStemmen = new VerkiezingenStemmen(id);
+                  verkiezingenStemmen.ShowDialog();
+                }
             }
 
-            else
+            catch(Exception ex)
             {
-              Verkiezing verkiezing = new Verkiezing();
-              verkiezing.setNaam(name);
-              int id = verkiezingenRepo.store(verkiezing);
-
-              VerkiezingenStemmen verkiezingenStemmen = new VerkiezingenStemmen(id);
-              verkiezingenStemmen.ShowDialog();
-            }
+                MessageBox.Show(ex.Message);
+            }       
         }
     }
 }

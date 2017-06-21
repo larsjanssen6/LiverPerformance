@@ -24,3 +24,5 @@ Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.Forms.Verkiezingen.PartijP
 Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.Forms.Verkiezingen.VerkiezingenStemmen.resources
 Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.Forms.Coalities.MaakCoalitie.resources
 Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.Forms.Coalities.Coalities.resources
+Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.Forms.Coalities.OneCoalitie.resources
+Y:\Code\Net\LivePerformance\obj\Debug\LivePerformance.Forms.Uitslagen.Uitslagen.resources

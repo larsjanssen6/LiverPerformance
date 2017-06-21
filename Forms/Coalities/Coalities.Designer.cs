@@ -28,33 +28,35 @@
     /// </summary>
     private void InitializeComponent()
     {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.gridCoalities = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCoalities)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // gridCoalities
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 26);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(553, 211);
-            this.dataGridView1.TabIndex = 0;
+            this.gridCoalities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridCoalities.Location = new System.Drawing.Point(24, 26);
+            this.gridCoalities.Name = "gridCoalities";
+            this.gridCoalities.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridCoalities.Size = new System.Drawing.Size(553, 211);
+            this.gridCoalities.TabIndex = 0;
+            this.gridCoalities.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCoalities_CellClick);
             // 
             // Coalities
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(601, 287);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gridCoalities);
             this.Name = "Coalities";
             this.Text = "Coalities";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCoalities)).EndInit();
             this.ResumeLayout(false);
 
     }
 
     #endregion
 
-    private System.Windows.Forms.DataGridView dataGridView1;
+    private System.Windows.Forms.DataGridView gridCoalities;
   }
 }

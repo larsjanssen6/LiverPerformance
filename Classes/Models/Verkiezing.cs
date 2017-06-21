@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LivePerformance.Classes.Models
 {
-    class Verkiezing
+    public class Verkiezing
     {
         private int id;
         private string naam;

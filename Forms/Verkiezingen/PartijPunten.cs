@@ -35,43 +35,67 @@ namespace LivePerformance.Forms.Verkiezingen
 
         public void loadPartijen()
         {
-            DataTable dt = new DataTable();
-
-            dt.Columns.Add("id");
-            dt.Columns.Add("naam");
-
-            foreach (Partij item in partijRepo.index())
+            try
             {
-                dt.Rows.Add(new object[] { item.getId(), item.getNaam() });
+                DataTable dt = new DataTable();
+
+                dt.Columns.Add("id");
+                dt.Columns.Add("naam");
+
+                foreach (Partij item in partijRepo.index())
+                {
+                  dt.Rows.Add(new object[] { item.getId(), item.getNaam() });
+                }
+
+                gridPartijen.DataSource = dt;
             }
 
-            gridPartijen.DataSource = dt;
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }           
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if(partijId <= 0)
+            try
             {
-                MessageBox.Show("Selecteer a.u.b eerst een partij.");
+                if (partijId <= 0)
+                {
+                    MessageBox.Show("Selecteer a.u.b eerst een partij.");
+                }
+
+                else
+                {
+                    int stemmen = Convert.ToInt32(txtStemmen.Value);
+
+                    stemRepo.store(verkiezingsId, partijId, stemmen);
+                    verkiezingenStemmen.loadStemmen();
+                    MessageBox.Show("Partij succesvol toegevoegd");
+                    this.Close();
+                }
             }
 
-            else
+            catch(Exception ex)
             {
-                int stemmen = Convert.ToInt32(txtStemmen.Value);
-
-                stemRepo.store(verkiezingsId, partijId, stemmen);
-                verkiezingenStemmen.loadStemmen();
-                MessageBox.Show("Partij succesvol toegevoegd");
-                this.Close();
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void gridPartijen_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            DataGridViewRow selectedRow = gridPartijen.Rows[index];
-            partijId = Convert.ToInt32(selectedRow.Cells[0].Value);
-            MessageBox.Show("Partij: " + selectedRow.Cells[1].Value.ToString() + " geselecteerd");
+            try
+            {
+                int index = e.RowIndex;
+                DataGridViewRow selectedRow = gridPartijen.Rows[index];
+                partijId = Convert.ToInt32(selectedRow.Cells[0].Value);
+                MessageBox.Show("Partij: " + selectedRow.Cells[1].Value.ToString() + " geselecteerd");
+            }
+
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }          
         }
     }
 }

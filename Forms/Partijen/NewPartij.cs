@@ -28,23 +28,41 @@ namespace LivePerformance.Forms.Partijen
 
             private void btnAddPartij_Click(object sender, EventArgs e)
             {
-                //Maak een partij aan
+                
+                try
+                {
+                    if (String.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtListTrekker.Text))
+                    {
+                      MessageBox.Show("Vul aub alle velden in");
+                    }
 
-                string name = txtName.Text;
-                string listTrekker = txtListTrekker.Text;
-                Partij partij = new Partij();
-                partij.setNaam(name);
-                partij.setLijstrekker(listTrekker);
+                    else
+                    {
+                      //Maak een partij aan
 
-                // Sla de partij op
+                      string name = txtName.Text;
+                      string listTrekker = txtListTrekker.Text;
+                      Partij partij = new Partij();
+                      partij.setNaam(name);
+                      partij.setLijstrekker(listTrekker);
 
-                txtListTrekker.Text = "";
-                txtName.Text = "";
+                      // Sla de partij op
 
-                partijenRepo.store(partij);
-                partijen.loadPartijen();
+                      txtListTrekker.Text = "";
+                      txtName.Text = "";
 
-                MessageBox.Show("Partij succesvol aangemaakt.");
-            }
+                      partijenRepo.store(partij);
+                      partijen.loadPartijen();
+
+                      MessageBox.Show("Partij succesvol aangemaakt.");
+                    }
+
+                }
+
+                catch (Exception ex)
+                {
+                  MessageBox.Show(ex.Message);
+                }
+    }
       }
 }

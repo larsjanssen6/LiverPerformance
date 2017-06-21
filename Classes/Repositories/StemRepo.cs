@@ -19,6 +19,36 @@ namespace LivePerformance.Classes.Repositories
             connection = conn;
         }
 
+        public List<Stem> all()
+        {
+          Stem stem;
+          List<Stem> stemmen = new List<Stem>();
+
+          connection.Connect();
+          SqlCommand sqlCommand = new SqlCommand("select v.id as vkid, s.id, p.naam as partij, v.naam as verkiezing, s.totaal as totaal from stem s inner join verkiezing v on v.id = s.verkiezing_id inner join partij p on s.partij_id = p.id", connection.getConnection());
+
+          SqlDataReader reader = sqlCommand.ExecuteReader();
+          if (reader.HasRows)
+          {
+            while (reader.Read())
+            {
+              stem = new Stem();
+              Partij partij = new Partij();
+              partij.setNaam(reader["partij"].ToString());
+              Verkiezing verkiezing = new Verkiezing();
+              verkiezing.setId(Convert.ToInt32(reader["vkid"]));
+              verkiezing.setNaam(reader["verkiezing"].ToString());
+              stem.setVerkiezing(verkiezing);
+              stem.setPartij(partij);
+              stem.setId(Convert.ToInt32(reader["id"]));
+              stem.setTotaal(Convert.ToInt32(reader["totaal"]));
+              stemmen.Add(stem);
+            }
+          }
+
+          return stemmen;
+        }
+
         public List<Stem> index(int id)
         {
             Stem stem;
@@ -54,7 +84,7 @@ namespace LivePerformance.Classes.Repositories
           Stem stem = new Stem();
 
           connection.Connect();
-          SqlCommand sqlCommand = new SqlCommand("select s.id, p.naam as partij, v.naam as verkiezing, s.totaal as totaal from stem s inner join verkiezing v on v.id = s.verkiezing_id inner join partij p on s.partij_id = p.id where s.id = @stemId", connection.getConnection());
+          SqlCommand sqlCommand = new SqlCommand("select s.id, p.naam as partij, p.lijstrekker as lijstrekker, v.naam as verkiezing, s.totaal as totaal from stem s inner join verkiezing v on v.id = s.verkiezing_id inner join partij p on s.partij_id = p.id where s.id = @stemId", connection.getConnection());
           sqlCommand.Parameters.AddWithValue("@stemId", id);
 
           SqlDataReader reader = sqlCommand.ExecuteReader();
@@ -65,6 +95,7 @@ namespace LivePerformance.Classes.Repositories
               stem = new Stem();
               Partij partij = new Partij();
               partij.setNaam(reader["partij"].ToString());
+              partij.setLijstrekker(reader["lijstrekker"].ToString());
               Verkiezing verkiezing = new Verkiezing();
               verkiezing.setNaam(reader["verkiezing"].ToString());
               stem.setVerkiezing(verkiezing);

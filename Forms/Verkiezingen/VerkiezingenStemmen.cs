@@ -29,31 +29,56 @@ namespace LivePerformance.Forms.Verkiezingen
 
         public void loadStemmen()
         {
-            DataTable dt = new DataTable();
-
-            dt.Columns.Add("Verkiezing");
-            dt.Columns.Add("Partij");
-            dt.Columns.Add("Stemmen");
-
-            foreach (Stem item in stemRepo.index(verkiezingsId))
+            try
             {
-        //hier
-                dt.Rows.Add(new object[] { item.getVerkiezing().getNaam(), item.getPartij().getNaam(), item.getTotaal() });
+                DataTable dt = new DataTable();
+
+                dt.Columns.Add("Verkiezing");
+                dt.Columns.Add("Partij");
+                dt.Columns.Add("Stemmen");
+
+                foreach (Stem item in stemRepo.index(verkiezingsId))
+                {
+                  dt.Rows.Add(new object[] { item.getVerkiezing().getNaam(), item.getPartij().getNaam(), item.getTotaal() });
+                }
+
+                gridStemmen.DataSource = dt;
             }
 
-            gridStemmen.DataSource = dt;
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+          
         }
 
         private void btnAddPartij_Click(object sender, EventArgs e)
         {
-            PartijPunten partijPunten = new PartijPunten(verkiezingsId, this);
-            partijPunten.ShowDialog();
+
+            try
+            {
+                PartijPunten partijPunten = new PartijPunten(verkiezingsId, this);
+                partijPunten.ShowDialog();
+            }
+
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }        
         }
 
         private void btnMakeCoalitie_Click(object sender, EventArgs e)
         {
-            MaakCoalitie newVerkiezingen = new MaakCoalitie(verkiezingsId);
-            newVerkiezingen.ShowDialog();
+            try
+            {
+                MaakCoalitie newVerkiezingen = new MaakCoalitie(verkiezingsId);
+                newVerkiezingen.ShowDialog();
+            }
+
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }      
         }
     }
 }

@@ -7,13 +7,15 @@ using System.Threading.Tasks;
 
 namespace LivePerformance.Classes.Repositories
 {
-    class Stem
+    public class Stem
     {
         private int id;
         private int totaal;
+        private int zetels;
         private Partij partij;
         private Verkiezing verkiezing;
         
+
         public int getId()
         {
             return id;

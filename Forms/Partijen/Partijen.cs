@@ -28,32 +28,56 @@ namespace LivePerformance.Forms.Partijen
 
         public void loadPartijen()
         {
-            DataTable dt = new DataTable();
-
-            dt.Columns.Add("id");
-            dt.Columns.Add("naam");
-            dt.Columns.Add("lijstrekker");
-
-            foreach (Partij item in partijenRepo.index())
+            try
             {
-                dt.Rows.Add(new object[] { item.getId(), item.getNaam(), item.getLijstrekker() });
+                DataTable dt = new DataTable();
+
+                dt.Columns.Add("id");
+                dt.Columns.Add("naam");
+                dt.Columns.Add("lijstrekker");
+
+                foreach (Partij item in partijenRepo.index())
+                {
+                  dt.Rows.Add(new object[] { item.getId(), item.getNaam(), item.getLijstrekker() });
+                }
+
+                lijstrekkersGrid.DataSource = dt;
             }
 
-            lijstrekkersGrid.DataSource = dt;
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnAddPartij_Click(object sender, EventArgs e)
         {
-            NewPartij newPartij = new NewPartij(this);
-            newPartij.ShowDialog();
+            try
+            {
+              NewPartij newPartij = new NewPartij(this);
+              newPartij.ShowDialog();
+            }
+
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void lijstrekkersGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            DataGridViewRow selectedRow = lijstrekkersGrid.Rows[index];
-            EditPartij editPartij = new EditPartij(Convert.ToInt32(selectedRow.Cells[0].Value), this);
-            editPartij.ShowDialog();
+            try
+            {
+                int index = e.RowIndex;
+                DataGridViewRow selectedRow = lijstrekkersGrid.Rows[index];
+                EditPartij editPartij = new EditPartij(Convert.ToInt32(selectedRow.Cells[0].Value), this);
+                editPartij.ShowDialog();
+            }
+
+            catch(Exception ex)
+            {
+               MessageBox.Show(ex.Message);
+            }      
         }
     }
 }

@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCoalitie = new System.Windows.Forms.Button();
             this.btnPartijen = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnNewVerkiezing = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnCoalitie
             // 
-            this.button1.Location = new System.Drawing.Point(34, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(164, 140);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Coalities";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCoalitie.Location = new System.Drawing.Point(34, 12);
+            this.btnCoalitie.Name = "btnCoalitie";
+            this.btnCoalitie.Size = new System.Drawing.Size(164, 140);
+            this.btnCoalitie.TabIndex = 0;
+            this.btnCoalitie.Text = "Coalities";
+            this.btnCoalitie.UseVisualStyleBackColor = true;
+            this.btnCoalitie.Click += new System.EventHandler(this.btnCoalitie_Click);
             // 
             // btnPartijen
             // 
@@ -59,8 +60,9 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(164, 140);
             this.button3.TabIndex = 2;
-            this.button3.Text = "Verkiezingen";
+            this.button3.Text = "Uitslagen";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnNewVerkiezing
             // 
@@ -80,7 +82,7 @@
             this.Controls.Add(this.btnNewVerkiezing);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnPartijen);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCoalitie);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -89,7 +91,7 @@
 
     #endregion
 
-    private System.Windows.Forms.Button button1;
+    private System.Windows.Forms.Button btnCoalitie;
     private System.Windows.Forms.Button btnPartijen;
     private System.Windows.Forms.Button button3;
     private System.Windows.Forms.Button btnNewVerkiezing;
